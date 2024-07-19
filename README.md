@@ -16,4 +16,10 @@ This repository aims to enhance theoretical Android development materials tracki
     - Intent Filters 
   - Services
     - Content Provider
-    - Broadcast Provider 
+    - Broadcast Provider
+   
+    # ROUND TWO : UI ARCHITECTURE
+    - Lifecycle 
+    - Side effect
+      
+    
