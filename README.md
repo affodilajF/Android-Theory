@@ -18,8 +18,8 @@ This repository aims to enhance theoretical Android development materials tracki
     - Content Provider
     - Broadcast Provider
    
-    # ROUND TWO : UI ARCHITECTURE
-    - Lifecycle 
-    - Side effect
+# ROUND TWO : UI ARCHITECTURE
+- Lifecycle 
+- Side effect
       
     
