@@ -1,25 +1,12 @@
-# Android-Theory
+## Keyboard listener
+``` kotlin
 
-Following https://roadmap.sh/android 
+val isKeyboardVisible by keyboardAsState()
 
-This repository aims to enhance theoretical Android development materials tracking, not necessarily for practical tracking.
+@Composable
+fun keyboardAsState(): State<Boolean> {
+    val isImeVisible = WindowInsets.ime.getBottom(LocalDensity.current) > 0
+    return rememberUpdatedState(isImeVisible)
+}
 
-
-# ROUND ONE : APP CPMPONENTS
-  - Activity
-    - Activity Life Cycle
-    - State Changes
-    - Tasks & Backstacks 
-  - Intent
-    - Implicit Intents
-    - Explicit Intents
-    - Intent Filters 
-  - Services
-    - Content Provider
-    - Broadcast Provider
-   
-# ROUND TWO : UI ARCHITECTURE
-- Lifecycle 
-- Side effect
-      
-    
+```
