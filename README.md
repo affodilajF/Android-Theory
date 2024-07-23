@@ -1,25 +1,10 @@
-# Android-Theory
+# NAVIGATION 
 
-Following https://roadmap.sh/android 
+LiFo => Last in first out. 
 
-This repository aims to enhance theoretical Android development materials tracking, not necessarily for practical tracking.
+### Backstack
+Stack of navigation destinations that the user has navigated through within the app. 
 
-
-# ROUND ONE : APP CPMPONENTS
-  - Activity
-    - Activity Life Cycle
-    - State Changes
-    - Tasks & Backstacks 
-  - Intent
-    - Implicit Intents
-    - Explicit Intents
-    - Intent Filters 
-  - Services
-    - Content Provider
-    - Broadcast Provider
-   
-# ROUND TWO : UI ARCHITECTURE
-- Lifecycle 
-- Side effect
-      
-    
+### Clearing Backstack 
+Use popUpTo(0) with ZERO PARAMETER. Means the all stack except screen A will be cleared. 
+![image](https://github.com/user-attachments/assets/66af2e7d-4770-445a-9f78-919e711a75c2)
