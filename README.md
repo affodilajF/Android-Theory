@@ -121,6 +121,8 @@ Composable should be side-effecr free. When you need to make changes to the stat
 
 Key term: An effect is a composable function that doesn't emit UI and causes side effects to run when a composition completes. 
 
+SO, if you have ON RELATED UI CODE, write in side effect API. 
+
 
 ### Side Effect
 - If recomoposed process happening inside exact composable, the side effect will trigger.
@@ -132,7 +134,7 @@ Key term: An effect is a composable function that doesn't emit UI and causes sid
   - Block param => lambda that defines the side effect to be executed.
 - Is a Composable function that executes a side effect in a separate coroutine scope (therfore we can run suspend function there).
 - It launches a coroutine with the block of the code passed as parameter.
-- The coroutine will be cancelled if LaunchedEffect leaves the composition.
+- The coroutine will be cancelled if LaunchedEffect leaves the composition or when the key param is change.
 - Proper to execute long operations (network calls, animations) without blocking the UI threads.
 
 ### DiposableEffect 
@@ -148,6 +150,33 @@ Key term: An effect is a composable function that doesn't emit UI and causes sid
         }
     }
 ```
+### Remember updated state
+Menit ke 20 => https://www.youtube.com/watch?v=mGpax3Y5B7E&list=PLzZEuVaFb9Ezi6LVAuEgzENCj8-032m_o&index=15 
+
+### SnapshotFlow
+Use to convert from state to kotlin flow. Why u need to convert? if you need kotlin flow utility, like kotlin flow operators (map, filters, collect, etc) which is people say its amazing???. 
+
+Menit ke 23 => https://www.youtube.com/watch?v=mGpax3Y5B7E&list=PLzZEuVaFb9Ezi6LVAuEgzENCj8-032m_o&index=15 
+
+### Remember Coroutine Scope
+If there is an remember coroutine scope inside composable function, and if its composable leaves recomposition, all coroutine in the scope will be also canceled. 
+
+ONLY USE THIS ON CALLBACKS!. Cuz if you are not, the compiler will give a warning (should be done using launch effect etc)
+
+### Produce State
+
+- This function returns coroutine. 
+- The purpose is to produce some kind of state that changes overtime. (Well its similiar to flow).
+- We can emit multiple time.
+- 
+![image](https://github.com/user-attachments/assets/cbea8bfe-5e28-4944-a66f-1e3821799bac)
+
+
+
+
+
+
+
 
 
       
